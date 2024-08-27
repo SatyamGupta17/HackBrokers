@@ -10,13 +10,12 @@ import matplotlib.pyplot as plt
 import io
 import json
 from flask_cors import CORS
-from apscheduler.schedulers.background import BackgroundScheduler
+# from apscheduler.schedulers.background import BackgroundScheduler
 import subprocess
 
 app = Flask(__name__)
 CORS(app)
-
-scheduler = BackgroundScheduler()
+ 
 
 cloudinary.config(
     cloud_name=os.getenv("CLOUD_NAME"),
