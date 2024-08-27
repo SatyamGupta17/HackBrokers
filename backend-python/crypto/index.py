@@ -10,10 +10,13 @@ import matplotlib.pyplot as plt
 import io
 import json
 from flask_cors import CORS
+from apscheduler.schedulers.background import BackgroundScheduler
 import subprocess
 
 app = Flask(__name__)
 CORS(app)
+
+scheduler = BackgroundScheduler()
 
 cloudinary.config(
     cloud_name=os.getenv("CLOUD_NAME"),
@@ -93,5 +96,6 @@ def schedule_model_training():
     return "Model is successfully trained again"
 
 if __name__ == '__main__': 
-    
+    # scheduler.add_job(func=schedule_model_training, trigger='date', run_date=datetime.now() + timedelta(hours=24))
+    # scheduler.start()
     app.run(port=5000, debug=True)
