@@ -5,7 +5,7 @@ import cloudinary.uploader
 import pandas as pd
 import pandas_ta as ta
 import pickle
-from datetime import timedelta, datetime
+from datetime import timedelta
 import matplotlib.pyplot as plt
 import io
 import json
